@@ -4,7 +4,7 @@
 #' @export
 #' @importFrom dplyr add_rownames add_rownames vars contains
 #' @importFrom dplyr funs rename_at rename mutate recode_factor
-#' @importFrom dplyr recode filter select
+#' @importFrom dplyr recode filter select inner_join
 #'
 make_ames <- function() {
   out <- AmesHousing::ames_raw %>%
@@ -306,6 +306,7 @@ make_ames <- function() {
     ) %>%
     # Electrical has a missing value with no real explanation
     dplyr::filter(!is.na(Electrical)) %>%
+    dplyr::inner_join(AmesHousing::ames_geo, by = "PID") %>%
     # Garage_Yr_Blt is removed due to a fair amount of missing data
     dplyr::select(-Order,-PID, -Garage_Yr_Blt)
   out

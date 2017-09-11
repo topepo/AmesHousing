@@ -15,3 +15,9 @@
 #'
 #' @keywords datasets
 NULL
+
+
+#' @rdname ames_raw
+#' @name ames_geo
+#' @aliases ames_geo
+NULL

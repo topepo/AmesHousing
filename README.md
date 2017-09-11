@@ -4,7 +4,7 @@ This package contains the data described by [De Cock (2011)](http://ww2.amstat.o
 
 ## Installation
 
-You can install AmesHousing from github with:
+You can install `AmesHousing` from github with:
 
 ``` r
 # install.packages("devtools")
@@ -28,6 +28,7 @@ The exact details can be found in the code of `make_ames` but a summary is:
  * Many factor levels were changed to be more understandable (e.g. `split_or_multilevel` instead of `080`)
  * Many missing values were reset. For example, if the variable `Bsmt_Qual` was missing, this implies that there is no basement on the property. Instead of a missing value, the value of `Bsmt_Qual` was changed to `No_Basement`. Similarly, numeric data pertaining to basements were set to zero where appropriate such as variables `Bsmt_Full_Bath` and `Total_Bsmt_SF`.
 * `Garage_Yr_Blt` contained many missing data and was removed. 
+* Approximate longitude and latitude are included. 
 
 ## The Ordered Factor Version
 
