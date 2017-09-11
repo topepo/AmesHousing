@@ -460,7 +460,8 @@ ames_vars <-
     'Condition_2', 'Electrical', 'Exter_Cond', 'Exter_Qual',
     'Exterior_1st', 'Exterior_2nd', 'Foundation', 'Functional',
     'Heating', 'Heating_QC', 'Kitchen_Qual', 'Land_Contour',
-    'Land_Slope', 'Lot_Config', 'Neighborhood', 'Paved_Drive',
+    'Land_Slope', 'Lot_Config', 'Neighborhood',
+    'Overall_Cond', 'Overall_Qual', 'Paved_Drive',
     'Roof_Matl', 'Roof_Style', 'Sale_Condition', 'Sale_Type',
     'Street', 'Utilities', 'Order', 'PID', 'Garage_Yr_Blt')
 
