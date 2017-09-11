@@ -2,12 +2,15 @@
 % Please edit documentation in R/make_ames.R
 \name{make_ames}
 \alias{make_ames}
+\alias{make_ordinal_ames}
 \title{Create a Processed Version of the Ames Housing Data}
 \usage{
 make_ames()
+
+make_ordinal_ames()
 }
 \value{
-A tibble with the data without ordered factors
+A tibble with the data.
 }
 \description{
 Create a Processed Version of the Ames Housing Data
