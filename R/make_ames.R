@@ -16,10 +16,11 @@ make_ames <- function() {
     ) %>%
     dplyr::rename(
       Sale_Price = SalePrice,
-      three_season_porch = `3Ssn_Porch`,
+      Three_season_porch = `3Ssn_Porch`,
       Year_Remod_Add = `Year_Remod/Add`,
-      first_Flr_SF = `1st_Flr_SF`,
-      second_Flr_SF = `2nd_Flr_SF`
+      First_Flr_SF = `1st_Flr_SF`,
+      Second_Flr_SF = `2nd_Flr_SF`,
+      Year_Sold = Yr_Sold
     ) %>%
     # Make more meaningful factor levels for some variables
     dplyr::mutate(
