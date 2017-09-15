@@ -1,8 +1,9 @@
 Package: AmesHousing
 Version: 0.0.0.9000
 Title: The Ames IA Housing Data
-Description: Raw and processed versions of the data are made available. 
-Authors@R: person("Max", "Kuhn", , "max@rstudio.com", c("aut", "cre"))
+Description: Raw and processed versions of the data from De Cock (2011, Journal of Statistics Education) are included in the package. 
+Authors@R: person("Max", "Kuhn", , "max@rstudio.com", c("aut", "cre")),
+    person("RStudio", role = "cph"))
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
