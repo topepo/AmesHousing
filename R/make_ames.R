@@ -62,7 +62,6 @@ make_ames <- function() {
           'I (all)' = 'I_all'
         )
     ) %>%
-    dplyr::mutate(Alley = ifelse(is.na(Alley), "No_alley_access", Alley)) %>%
     dplyr::mutate(
       Lot_Shape =
         dplyr::recode_factor(
@@ -299,6 +298,15 @@ make_ames <- function() {
           "Timber" = "Timberland",
           "Veenker" = "Veenker"
         )
+    ) %>%
+    mutate(
+      Alley =
+        dplyr::recode(
+          Alley,
+          "Grvl" = "Gravel",
+          "Pave" = "Paved",
+          .missing = "No_Alley_Access"
+        )
     )  %>%
     # Convert everything else to factors
     dplyr::mutate(
@@ -329,7 +337,6 @@ make_ames <- function() {
       Lot_Config = factor(Lot_Config),
       Mas_Vnr_Type = factor(Mas_Vnr_Type),
       Misc_Feature = factor(Misc_Feature),
-      Neighborhood = factor(Neighborhood),
       Paved_Drive = factor(Paved_Drive),
       Pool_QC = factor(Pool_QC),
       Roof_Matl = factor(Roof_Matl),
@@ -344,6 +351,16 @@ make_ames <- function() {
     dplyr::inner_join(AmesHousing::ames_geo, by = "PID") %>%
     # Garage_Yr_Blt is removed due to a fair amount of missing data
     dplyr::select(-Order,-PID, -Garage_Yr_Blt)
+  
+  hood_tab <- sort(table(out$Neighborhood))
+  hood_tab <- hood_tab[hood_tab > 0]
+  hood_levels <- rev(names(hood_tab))
+  
+  out <- out %>%
+    dplyr::mutate(
+      Neighborhood = factor(Neighborhood, levels = hood_levels)
+    )
+  
   out
 }
 
