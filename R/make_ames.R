@@ -414,8 +414,8 @@ make_ordinal_ames <- function() {
   out <- make_ames()
   out$Lot_Shape <- ordered(
     as.character(out$Lot_Shape),
-    levels = c("irregular", "moderately_Irregular",
-               "slightly_irregular", "regular")
+    levels = c("Irregular", "Moderately_Irregular",
+               "Slightly_Irregular", "Regular")
   )
   out$Land_Contour <- ordered(
     as.character(out$Land_Contour),
