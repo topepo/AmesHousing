@@ -111,7 +111,6 @@ make_ames <- function() {
       Garage_Area = ifelse(is.na(Garage_Area), 0, Garage_Area),
       Bsmt_Full_Bath = ifelse(is.na(Bsmt_Full_Bath), 0, Bsmt_Full_Bath),
       Bsmt_Half_Bath = ifelse(is.na(Bsmt_Half_Bath), 0, Bsmt_Half_Bath),
-      Fence = ifelse(is.na(Fence), "No_Fence", Fence),
       Misc_Feature = ifelse(is.na(Misc_Feature), "None", Misc_Feature),
       Mas_Vnr_Type = ifelse(is.na(Mas_Vnr_Type), "None", Mas_Vnr_Type),
       Mas_Vnr_Area = ifelse(is.na(Mas_Vnr_Area), 0, Mas_Vnr_Area),
@@ -317,6 +316,17 @@ make_ames <- function() {
           "N" = "Dirt_Gravel"
         )
     )   %>%
+    mutate(
+      Fence =
+        dplyr::recode(
+          Fence,
+          "GdPrv" = "Good_Privacy",
+          "MnPrv" = "Minimum_Privacy",
+          "GdWo" = "Good_Wood",
+          "MnWw" = "Minimum_Wood_Wire",
+          .missing = "No_Fence"
+        )
+    )   %>%   
     # Convert everything else to factors
     dplyr::mutate(
       Alley = factor(Alley),
@@ -353,7 +363,9 @@ make_ames <- function() {
       Sale_Condition = factor(Sale_Condition),
       Sale_Type = factor(Sale_Type),
       Street = factor(Street),
-      Utilities = factor(Utilities)
+      Utilities = factor(Utilities),
+      Overall_Qual = factor(Overall_Qual, levels = rev(ten_point)),
+      Overall_Cond = factor(Overall_Cond, levels = rev(ten_point))
     ) %>%
     # Electrical has a missing value with no real explanation
     dplyr::filter(!is.na(Electrical)) %>%
@@ -373,28 +385,29 @@ make_ames <- function() {
   out
 }
 
+ten_point <- c(
+  "Very_Excellent",
+  "Excellent",
+  "Very_Good",
+  "Good",
+  "Above_Average",
+  "Average",
+  "Below_Average",
+  "Fair",
+  "Poor",
+  "Very_Poor"
+)
+five_point <- c(
+  "Excellent",
+  "Good",
+  "Typical",
+  "Fair",
+  "Poor"
+)
+
 #' @rdname make_ames
 #' @export
 make_ordinal_ames <- function() {
-  ten_point <- c(
-    "Very_Excellent",
-    "Excellent",
-    "Very_Good",
-    "Good",
-    "Above_Average",
-    "Average",
-    "Below_Average",
-    "Fair",
-    "Poor",
-    "Very_Poor"
-  )
-  five_point <- c(
-    "Excellent",
-    "Good",
-    "Typical",
-    "Fair",
-    "Poor"
-  )
   get_no <- function(x)
     grep("^No", levels(x), value = TRUE)
 
@@ -502,7 +515,8 @@ make_ordinal_ames <- function() {
   )
   out$Fence <- ordered(
     as.character(out$Fence),
-    levels = c("No_Fence", "MnWw", "GdWo", "MnPrv", "GdPrv")
+    levels = c("No_Fence", "Minimum_Wood_Wire", "Good_Wood", 
+               "Minimum_Privacy", "Good_Privacy")
   )
   out
 }
