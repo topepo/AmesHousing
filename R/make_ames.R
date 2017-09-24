@@ -307,7 +307,16 @@ make_ames <- function() {
           "Pave" = "Paved",
           .missing = "No_Alley_Access"
         )
-    )  %>%
+    ) %>%
+    mutate(
+      Paved_Drive =
+        dplyr::recode(
+          Paved_Drive,
+          "Y" = "Paved",
+          "P" = "Partial_Pavement",
+          "N" = "Dirt_Gravel"
+        )
+    )   %>%
     # Convert everything else to factors
     dplyr::mutate(
       Alley = factor(Alley),
@@ -485,7 +494,7 @@ make_ordinal_ames <- function() {
   )
   out$Paved_Drive <- ordered(
     as.character(out$Paved_Drive),
-    levels = c("N", "P", "Y")
+    levels = c("Dirt_Gravel", "Partial_Pavement", "Paved")
   )
   out$Pool_QC <- ordered(
     as.character(out$Pool_QC),
