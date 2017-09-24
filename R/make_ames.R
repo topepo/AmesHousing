@@ -27,22 +27,22 @@ make_ames <- function() {
       MS_SubClass =
         dplyr::recode_factor(
           factor(MS_SubClass),
-          '020' = 'one_story_1946_and_newer_all_styles',
-          '030' = 'one_story_1945_and_older',
-          '040' = 'one_story_with_finished_attice_all_ages',
-          '045' = 'one_and_half_story_unfinished_all_ages',
-          '050' = 'one_and_half_story_finished_all_ages',
-          '060' = '2_story_1946_and_newer',
-          '070' = '2_story_1945_and_older',
-          '075' = '2_and_half_story_all_ages',
-          '080' = 'split_or_multilevel',
-          '085' = 'split_foyer',
-          '090' = 'duplex_all_styles_and_ages',
-          '120' = 'one_story_PUD_1946_and_newer',
-          '150' = 'one_and_half_story_PUD_all_ages',
-          '160' = 'two_story_PUD_1946_and_newer',
-          '180' = 'PUD_multilevel_split_level_foyer',
-          '190' = 'two_family_conversion_all_styles_and_ages'
+          '020' = 'One_Story_1946_and_Newer_All_Styles',
+          '030' = 'One_Story_1945_and_Older',
+          '040' = 'One_Story_with_Finished_Attic_All_Ages',
+          '045' = 'One_and_Half_Story_Unfinished_All_Ages',
+          '050' = 'One_and_Half_Story_Finished_All_Ages',
+          '060' = 'Two_Story_1946_and_Newer',
+          '070' = 'Two_Story_1945_and_Older',
+          '075' = 'Two_and_Half_Story_All_Ages',
+          '080' = 'Split_or_Multilevel',
+          '085' = 'Split_Foyer',
+          '090' = 'Duplex_All_Styles_and_Ages',
+          '120' = 'One_Story_PUD_1946_and_Newer',
+          '150' = 'One_and_Half_Story_PUD_All_Ages',
+          '160' = 'Two_Story_PUD_1946_and_Newer',
+          '180' = 'PUD_Multilevel_Split_Level_Foyer',
+          '190' = 'Two_Family_conversion_All_Styles_and_Ages'
         )
     ) %>%
     dplyr::mutate(
@@ -66,22 +66,22 @@ make_ames <- function() {
       Lot_Shape =
         dplyr::recode_factor(
           factor(Lot_Shape),
-          'Reg' = 'regular',
-          'IR1' = 'slightly_irregular',
-          'IR2' = 'moderately_Irregular',
-          'IR3' = 'irregular'
+          'Reg' = 'Regular',
+          'IR1' = 'Slightly_Irregular',
+          'IR2' = 'Moderately_Irregular',
+          'IR3' = 'Irregular'
         )
     ) %>%
     dplyr::mutate(Bldg_Type =
                     dplyr::recode_factor(factor(Bldg_Type),
-                                         '1Fam' = 'oneFam',
-                                         '2fmCon' = 'twoFmCon')) %>%
+                                         '1Fam' = 'OneFam',
+                                         '2fmCon' = 'TwoFmCon')) %>%
     # Change some factor levels so that they make valid R variable names
     dplyr::mutate(
-      House_Style =  gsub("^1.5", "one_and_half_", House_Style),
-      House_Style =  gsub("^1", "one_", House_Style),
-      House_Style =  gsub("^2.5", "two_and_half_", House_Style),
-      House_Style =  gsub("^2", "two_", House_Style),
+      House_Style =  gsub("^1.5", "One_and_Half_", House_Style),
+      House_Style =  gsub("^1", "One_", House_Style),
+      House_Style =  gsub("^2.5", "Two_and_Half_", House_Style),
+      House_Style =  gsub("^2", "Two_", House_Style),
       House_Style = factor(House_Style)
     ) %>%
     # Some characteristics that houses lack (e.g. garage, pool) are
@@ -513,7 +513,7 @@ ames_vars <-
     'Condition_2', 'Electrical', 'Exter_Cond', 'Exter_Qual',
     'Exterior_1st', 'Exterior_2nd', 'Foundation', 'Functional',
     'Heating', 'Heating_QC', 'Kitchen_Qual', 'Land_Contour',
-    'Land_Slope', 'Lot_Config', 'Neighborhood',
+    'Land_Slope', 'Lot_Config', 'Neighborhood', 'Yr_Sold',
     'Overall_Cond', 'Overall_Qual', 'Paved_Drive',
     'Roof_Matl', 'Roof_Style', 'Sale_Condition', 'Sale_Type',
     'Street', 'Utilities', 'Order', 'PID', 'Garage_Yr_Blt')
