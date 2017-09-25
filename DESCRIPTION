@@ -1,5 +1,5 @@
 Package: AmesHousing
-Version: 0.0.0.9000
+Version: 0.0.1
 Title: The Ames IA Housing Data
 Description: Raw and processed versions of the data from De Cock (2011, Journal of Statistics Education) are included in the package. 
 Authors@R: c(
