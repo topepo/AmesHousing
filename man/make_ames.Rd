@@ -15,3 +15,42 @@ A tibble with the data.
 \description{
 Create a Processed Version of the Ames Housing Data
 }
+\details{
+For the processed version, the exact details can be found in
+the code of \code{make_ames} but a summary of the differences between
+these data sets and \code{ames_raw} is:
+\itemize{
+\item All factors are \emph{unordered}.
+\item \code{PID} and \code{Order} are removed.
+\item Spaces and special characters in column names where changed
+to snake case. To be consistent, \code{SalePrice} was changed to
+\code{Sale_Price}.
+\item One row was removed with an unexplained missing value.
+\item Many factor levels were changed to be more understandable
+(e.g. \code{Split_or_Multilevel} instead of \code{080})
+\item Many missing values were reset. For example, if the variable
+\code{Bsmt_Qual} was missing, this implies that there is no basement
+on the property. Instead of a missing value, the value of
+\code{Bsmt_Qual} was changed to \code{No_Basement}. Similarly, numeric
+data pertaining to basements were set to zero where appropriate
+such as variables \code{Bsmt_Full_Bath} and \code{Total_Bsmt_SF}.
+\item \code{Garage_Yr_Blt} contained many missing data and was removed.
+\item Approximate longitude and latitude are included for 2,912
+properties. By default, the processed data returns these
+instances since their parcel IDs cannot be found in the Iowa
+system. This eliminated on neighborhood, Green Hills, from the
+processed data.
+
+\code{make_ordinal_ames} is the same as \code{make_ames} but many factor
+variables were changed to class \code{ordered}.
+}
+}
+\examples{
+ames <- make_ames()
+nrow(ames)
+summary(ames$Sale_Price)
+
+ames_ord <- make_ordinal_ames()
+ord_vars <- vapply(ames_ord, is.ordered, logical(1))
+names(ord_vars)[ord_vars]
+}
