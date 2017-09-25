@@ -37,14 +37,14 @@ such as variables \code{Bsmt_Full_Bath} and \code{Total_Bsmt_SF}.
 \item \code{Garage_Yr_Blt} contained many missing data and was removed.
 \item Approximate longitude and latitude are included for 2,911
 properties. By default, the processed data returns these
-instances since their parcel IDs cannot be found in the Iowa
-system. This eliminated on neighborhood, Green Hills, from the
+instances since their parcel IDs can be found in the Iowa
+system. This eliminated one neighborhood, Green Hills, from the
 processed data. Also, note that there are 7 properties with
 identical geotags. These are units within the same building.
 }
 
 \code{make_ordinal_ames} is the same as \code{make_ames} but many factor
-variables were changed to class \code{ordered}.
+variables were changed to class \code{ordered} (see below).
 }
 \examples{
 ames <- make_ames()
