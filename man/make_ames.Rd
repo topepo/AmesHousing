@@ -35,11 +35,12 @@ on the property. Instead of a missing value, the value of
 data pertaining to basements were set to zero where appropriate
 such as variables \code{Bsmt_Full_Bath} and \code{Total_Bsmt_SF}.
 \item \code{Garage_Yr_Blt} contained many missing data and was removed.
-\item Approximate longitude and latitude are included for 2,911
+\item Approximate longitude and latitude are included for 2,912
 properties. By default, the processed data returns these
 instances since their parcel IDs cannot be found in the Iowa
 system. This eliminated on neighborhood, Green Hills, from the
-processed data.
+processed data. Also, note that there are 7 properties with
+identical geotags. These are units within the same building.
 }
 
 \code{make_ordinal_ames} is the same as \code{make_ames} but many factor

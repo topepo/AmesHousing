@@ -21,11 +21,12 @@
 #'  data pertaining to basements were set to zero where appropriate
 #'  such as variables `Bsmt_Full_Bath` and `Total_Bsmt_SF`.
 #' * `Garage_Yr_Blt` contained many missing data and was removed. 
-#' * Approximate longitude and latitude are included for 2,911
+#' * Approximate longitude and latitude are included for 2,912
 #'  properties. By default, the processed data returns these
 #'  instances since their parcel IDs cannot be found in the Iowa
 #'  system. This eliminated on neighborhood, Green Hills, from the
-#'  processed data.
+#'  processed data. Also, note that there are 7 properties with
+#'  identical geotags. These are units within the same building. 
 #' 
 #' `make_ordinal_ames` is the same as `make_ames` but many factor
 #'  variables were changed to class `ordered`.
