@@ -1,5 +1,9 @@
 # AmesHousing
 
+
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/AmesHousing)](http://cran.r-project.org/web/packages/AmesHousing)
+[![Downloads](http://cranlogs.r-pkg.org/badges/AmesHousing)](http://cran.rstudio.com/package=AmesHousing)
+
 This package contains the data described by [De Cock (2011)](http://ww2.amstat.org/publications/jse/v19n3/decock.pdf) where 82 fields were recored for 2,930 properties in Ames IA. Different versions of the data are fallible using the package. 
 
 ## Installation
