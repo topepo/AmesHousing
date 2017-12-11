@@ -21,12 +21,13 @@
 #'  data pertaining to basements were set to zero where appropriate
 #'  such as variables `Bsmt_Full_Bath` and `Total_Bsmt_SF`.
 #' * `Garage_Yr_Blt` contained many missing data and was removed. 
-#' * Approximate longitude and latitude are included for 2,911
+#' * Approximate longitude and latitude are included for 2,925
 #'  properties. By default, the processed data returns these
 #'  instances since their parcel IDs can be found in the Iowa
-#'  system. This eliminated one neighborhood, Green Hills, from the
-#'  processed data. Also, note that there are 7 properties with
+#'  system. Also, note that there are 6 properties with
 #'  identical geotags. These are units within the same building. 
+#'  For some properties, updated versions of the PID identifers
+#'  were found and are replaced with new values. 
 #' 
 #' `make_ordinal_ames` is the same as `make_ames` but many factor
 #'  variables were changed to class `ordered` (see below).
@@ -407,6 +408,21 @@ make_ames <- function() {
     ) %>%
     # Electrical has a missing value with no real explanation
     dplyr::filter(!is.na(Electrical)) %>%
+    # see issue #2, updated PIDs for some properties
+    mutate(
+      PID = ifelse(PID == "0904351040", "0904351045,", PID),
+      PID = ifelse(PID == "0535300120", "0535300125,", PID),
+      PID = ifelse(PID == "0902401130", "0902401135,", PID),
+      PID = ifelse(PID == "0906226090", "0906226090,", PID),
+      PID = ifelse(PID == "0908154040", "0908154045,", PID),
+      PID = ifelse(PID == "0909129100", "0909129105,", PID),
+      PID = ifelse(PID == "0914465040", "0914465043,", PID),
+      PID = ifelse(PID == "0902103150", "0902103145,", PID),
+      PID = ifelse(PID == "0902401120", "0902401125,", PID),
+      PID = ifelse(PID == "0916253320", "0916256880,", PID),
+      PID = ifelse(PID == "0916477060", "0916477065,", PID),
+      PID = ifelse(PID == "0916325040", "0916325045,", PID)
+    ) %>%
     dplyr::inner_join(AmesHousing::ames_geo, by = "PID") %>%
     # Garage_Yr_Blt is removed due to a fair amount of missing data
     dplyr::select(-Order,-PID, -Garage_Yr_Blt)
