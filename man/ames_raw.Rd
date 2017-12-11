@@ -18,4 +18,90 @@ De Cock, D. (2011). "Ames, Iowa: Alternative to the Boston Housing Data as an En
 \description{
 Summon the data described by De Cock (2011) where 82 fields were recored for 2,930 properties in Ames IA.
 }
+\details{
+From the data documentation reference, the columns include:
+\itemize{
+\item \code{Order}: Observation number
+\item \code{PID}: Parcel identification number  - can be used with city web site for parcel review.
+\item \code{MS SubClass}: Identifies the type of dwelling involved in the sale.
+\item \code{MS Zoning}: Identifies the general zoning classification of the sale.
+\item \code{Lot Frontage}: Linear feet of street connected to property
+\item \code{Lot Area}: Lot size in square feet
+\item \code{Street}: Type of road access to property
+\item \code{Alley}: Type of alley access to property
+\item \code{Lot Shape}: General shape of property
+\item \code{Land Contour}: Flatness of the property
+\item \code{Utilities}: Type of utilities available
+\item \code{Lot Config}: Lot configuration
+\item \code{Land Slope}: Slope of property
+\item \code{Neighborhood}: Physical locations within Ames city limits (map available)
+\item \code{Condition 1}: Proximity to various conditions
+\item \code{Condition 2}: Proximity to various conditions (if more than one is present)
+\item \code{Bldg Type}: Type of dwelling
+\item \code{House Style}: Style of dwelling
+\item \code{Overall Qual}: Rates the overall material and finish of the house
+\item \code{Overall Cond}: Rates the overall condition of the house
+\item \code{Year Built}: Original construction date
+\item \code{Year Remod/Add}: Remodel date (same as construction date if no remodeling or additions)
+\item \code{Roof Style}: Type of roof
+\item \code{Roof Matl}: Roof material
+\item \code{Exterior 1}: Exterior covering on house
+\item \code{Exterior 2}: Exterior covering on house (if more than one material)
+\item \code{Mas Vnr Type}: Masonry veneer type
+\item \code{Mas Vnr Area}: Masonry veneer area in square feet
+\item \code{Exter Qual}: Evaluates the quality of the material on the exterior
+\item \code{Exter Cond}: Evaluates the present condition of the material on the exterior
+\item \code{Foundation}: Type of foundation
+\item \code{Bsmt Qual}: Evaluates the height of the basement
+\item \code{Bsmt Cond}: Evaluates the general condition of the basement
+\item \code{Bsmt Exposure}: Refers to walkout or garden level walls
+\item \code{BsmtFin Type 1}: Rating of basement finished area
+\item \code{BsmtFin SF 1}: Type 1 finished square feet
+\item \code{BsmtFinType 2}: Rating of basement finished area (if multiple types)
+\item \code{BsmtFin SF 2}: Type 2 finished square feet
+\item \code{Bsmt Unf SF}: Unfinished square feet of basement area
+\item \code{Total Bsmt SF}: Total square feet of basement area
+\item \code{Heating}: Type of heating
+\item \code{HeatingQC}: Heating quality and condition
+\item \code{Central Air}: Central air conditioning
+\item \code{Electrical}: Electrical system
+\item \code{1st Flr SF}: First Floor square feet
+\item \code{2nd Flr SF}: Second floor square feet
+\item \code{Low Qual Fin SF}: Low quality finished square feet (all floors)
+\item \code{Gr Liv Area}: Above grade (ground) living area square feet
+\item \code{Bsmt Full Bath}: Basement full bathrooms
+\item \code{Bsmt Half Bath}: Basement half bathrooms
+\item \code{Full Bath}: Full bathrooms above grade
+\item \code{Half Bath}: Half baths above grade
+\item \code{Bedroom}: Bedrooms above grade (does NOT include basement bedrooms)
+\item \code{Kitchen}: Kitchens above grade
+\item \code{KitchenQual}: Kitchen quality
+\item \code{TotRmsAbvGrd}: Total rooms above grade (does not include bathrooms)
+\item \code{Functional}: Home functionality (Assume typical unless deductions are warranted)
+\item \code{Fireplaces}: Number of fireplaces
+\item \code{FireplaceQu}: Fireplace quality
+\item \code{Garage Type}: Garage location
+\item \code{Garage Yr Blt}: Year garage was built
+\item \code{Garage Finish}: Interior finish of the garage
+\item \code{Garage Cars}: Size of garage in car capacity
+\item \code{Garage Area}: Size of garage in square feet
+\item \code{Garage Qual}: Garage quality
+\item \code{Garage Cond}: Garage condition
+\item \code{Paved Drive}: Paved driveway
+\item \code{Wood Deck SF}: Wood deck area in square feet
+\item \code{Open Porch SF}: Open porch area in square feet
+\item \code{Enclosed Porch}: Enclosed porch area in square feet
+\item \code{3-Ssn Porch}: Three season porch area in square feet
+\item \code{Screen Porch}: Screen porch area in square feet
+\item \code{Pool Area}: Pool area in square feet
+\item \code{Pool QC}: Pool quality
+\item \code{Fence}: Fence quality
+\item \code{Misc Feature}: Miscellaneous feature not covered in other categories
+\item \code{Misc Val}: $Value of miscellaneous feature
+\item \code{Mo Sold}: Month Sold
+\item \code{Yr Sold}: Year Sold
+\item \code{Sale Type}: Type of sale
+\item \code{Sale Condition}: Condition of sale
+}
+}
 \keyword{datasets}

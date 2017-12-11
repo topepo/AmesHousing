@@ -35,16 +35,22 @@ on the property. Instead of a missing value, the value of
 data pertaining to basements were set to zero where appropriate
 such as variables \code{Bsmt_Full_Bath} and \code{Total_Bsmt_SF}.
 \item \code{Garage_Yr_Blt} contained many missing data and was removed.
-\item Approximate longitude and latitude are included for 2,911
+\item Approximate longitude and latitude are included for 2,925
 properties. By default, the processed data returns these
 instances since their parcel IDs can be found in the Iowa
-system. This eliminated one neighborhood, Green Hills, from the
-processed data. Also, note that there are 7 properties with
+system. Also, note that there are 6 properties with
 identical geotags. These are units within the same building.
+For some properties, updated versions of the PID identifiers
+were found and are replaced with new values.
 }
 
 \code{make_ordinal_ames} is the same as \code{make_ames} but many factor
 variables were changed to class \code{ordered} (see below).
+
+The documentation for \code{\link[=ames_raw]{ames_raw()}} contains descriptions of
+the columns although, as noted above, the column names in
+\code{\link[=ames_raw]{ames_raw()}} are slightly different from the processed
+versions.
 }
 \examples{
 ames <- make_ames()

@@ -26,11 +26,16 @@
 #'  instances since their parcel IDs can be found in the Iowa
 #'  system. Also, note that there are 6 properties with
 #'  identical geotags. These are units within the same building. 
-#'  For some properties, updated versions of the PID identifers
+#'  For some properties, updated versions of the PID identifiers
 #'  were found and are replaced with new values. 
 #' 
 #' `make_ordinal_ames` is the same as `make_ames` but many factor
 #'  variables were changed to class `ordered` (see below).
+#'  
+#'  The documentation for [ames_raw()] contains descriptions of
+#'   the columns although, as noted above, the column names in 
+#'   [ames_raw()] are slightly different from the processed
+#'   versions. 
 #' @return A tibble with the data.
 #' @examples 
 #' ames <- make_ames()
