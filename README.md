@@ -2,13 +2,21 @@
 
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/AmesHousing)](http://cran.r-project.org/web/packages/AmesHousing)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/AmesHousing)](http://cran.rstudio.com/package=AmesHousing)
 [![Downloads](http://cranlogs.r-pkg.org/badges/AmesHousing)](http://cran.rstudio.com/package=AmesHousing)
+![](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
 
-This package contains the data described by [De Cock (2011)](http://ww2.amstat.org/publications/jse/v19n3/decock.pdf) where 82 fields were recored for 2,930 properties in Ames IA. Different versions of the data are fallible using the package. 
+This package contains the data described by [De Cock (2011)](http://ww2.amstat.org/publications/jse/v19n3/decock.pdf) where 82 fields were recored for 2,930 properties in Ames IA. Different versions of the data are available using the package. 
 
 ## Installation
 
-You can install `AmesHousing` from github with:
+To install the package from CRAN, use
+
+```r
+install.packages("AmesHousing")
+```
+
+You can install the development version of `AmesHousing` from GitHub with:
 
 ``` r
 # install.packages("devtools")

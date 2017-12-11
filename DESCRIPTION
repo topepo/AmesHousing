@@ -1,5 +1,5 @@
 Package: AmesHousing
-Version: 0.0.2
+Version: 0.0.3
 Title: The Ames Iowa Housing Data
 Description: Raw and processed versions of the data from De Cock (2011) <http://ww2.amstat.org/publications/jse> are included in the package. 
 Authors@R: c(
