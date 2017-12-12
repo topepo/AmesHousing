@@ -9,5 +9,6 @@ First CRAN release.
 # AmesHousing 0.0.3
 
 * Changes made to about two dozen data points. Dmytro Perepolkin found updated PID fields and was able to resolve more geocodes (see [issue #2](https://github.com/topepo/AmesHousing/issues/2)). 
+* A data set (`ames_schools`) was added. 
 
 

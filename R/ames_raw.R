@@ -106,3 +106,17 @@ NULL
 #' @name ames_geo
 #' @aliases ames_geo
 NULL
+
+#' Ames Public Schools
+#'
+#' Locations of local schools
+#'
+#' @name ames_schools
+#' @aliases ames_schools
+#' @docType data
+#' @return \item{ames_schools}{a tibble}
+#' @details 
+#' 
+#' The data set includes the school name and the geocodes. 
+#' @keywords datasets
+NULL
