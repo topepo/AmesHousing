@@ -25,7 +25,6 @@ these data sets and \code{ames_raw} is:
 \item Spaces and special characters in column names where changed
 to snake case. To be consistent, \code{SalePrice} was changed to
 \code{Sale_Price}.
-\item One row was removed with an unexplained missing value.
 \item Many factor levels were changed to be more understandable
 (e.g. \code{Split_or_Multilevel} instead of \code{080})
 \item Many missing values were reset. For example, if the variable
@@ -35,10 +34,8 @@ on the property. Instead of a missing value, the value of
 data pertaining to basements were set to zero where appropriate
 such as variables \code{Bsmt_Full_Bath} and \code{Total_Bsmt_SF}.
 \item \code{Garage_Yr_Blt} contained many missing data and was removed.
-\item Approximate longitude and latitude are included for 2,925
-properties. By default, the processed data returns these
-instances since their parcel IDs can be found in the Iowa
-system. Also, note that there are 6 properties with
+\item Approximate longitude and latitude are included for the
+properties. Also, note that there are 6 properties with
 identical geotags. These are units within the same building.
 For some properties, updated versions of the PID identifiers
 were found and are replaced with new values.
