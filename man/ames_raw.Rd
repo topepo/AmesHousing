@@ -4,6 +4,8 @@
 \name{ames_raw}
 \alias{ames_raw}
 \alias{ames_geo}
+\alias{ames_new}
+\alias{hood_levels}
 \title{Raw Ames Housing Data}
 \source{
 De Cock, D. (2011). "Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project," \emph{Journal of Statistics Education},  Volume 19, Number 3.

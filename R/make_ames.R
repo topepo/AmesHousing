@@ -1,13 +1,12 @@
 #' Create a Processed Version of the Ames Housing Data
 #'
-#' 
-#' @details 
+#' @details
 #' For the processed version, the exact details can be found in
 #'  the code of `make_ames` but a summary of the differences between
 #'  these data sets and `ames_raw` is:
-#'   
+#'
 #' * All factors are _unordered_.
-#' * `PID` and `Order` are removed. 
+#' * `PID` and `Order` are removed.
 #' * Spaces and special characters in column names where changed
 #'  to snake case. To be consistent, `SalePrice` was changed to
 #'  `Sale_Price`.
@@ -19,26 +18,30 @@
 #'  `Bsmt_Qual` was changed to `No_Basement`. Similarly, numeric
 #'  data pertaining to basements were set to zero where appropriate
 #'  such as variables `Bsmt_Full_Bath` and `Total_Bsmt_SF`.
-#' * `Garage_Yr_Blt` contained many missing data and was removed. 
+#' * `Garage_Yr_Blt` contained many missing data and was removed.
 #' * Approximate longitude and latitude are included for the
 #'  properties. Also, note that there are 6 properties with
-#'  identical geotags. These are units within the same building. 
+#'  identical geotags. These are units within the same building.
 #'  For some properties, updated versions of the PID identifiers
-#'  were found and are replaced with new values. 
-#' 
+#'  were found and are replaced with new values.
+#'
 #' `make_ordinal_ames` is the same as `make_ames` but many factor
 #'   variables were changed to class `ordered` (see below).
-#'  
+#'
 #'  The documentation for [ames_raw()] contains descriptions of
-#'   the columns although, as noted above, the column names in 
+#'   the columns although, as noted above, the column names in
 #'   [ames_raw()] are slightly different from the processed
-#'   versions. 
+#'   versions.
+#'
+#' `make_ames_new()` creates a data set of new properties. These were populated
+#'  using less data sources than the original and lack a number of the condition
+#'  and quality. Both properties were unsold at the time of this writing.
 #' @return A tibble with the data.
-#' @examples 
+#' @examples
 #' ames <- make_ames()
 #' nrow(ames)
 #' summary(ames$Sale_Price)
-#' 
+#'
 #' ames_ord <- make_ordinal_ames()
 #' ord_vars <- vapply(ames_ord, is.ordered, logical(1))
 #' names(ord_vars)[ord_vars]
@@ -46,9 +49,19 @@
 #' @importFrom dplyr add_rownames add_rownames vars contains
 #' @importFrom dplyr funs rename_at rename mutate recode_factor
 #' @importFrom dplyr recode filter select inner_join
-#'
+#
 make_ames <- function() {
-  out <- AmesHousing::ames_raw %>%
+  process_ames(AmesHousing::ames_raw)
+}
+
+#' @export
+#' @rdname make_ames
+make_ames_new <- function() {
+  process_ames(AmesHousing::ames_new)
+}
+
+process_ames <- function(dat) {
+  out <- dat %>%
     # Rename variables with spaces or begin with numbers.
     # SalePrice would be inconsistently named so change that too.
     dplyr::rename_at(
@@ -337,7 +350,8 @@ make_ames <- function() {
           "Somerst" = "Somerset",
           "StoneBr" = "Stone_Brook",
           "Timber" = "Timberland",
-          "Veenker" = "Veenker"
+          "Veenker" = "Veenker",
+          "Hayden Lake" = "Hayden_Lake"
         )
     ) %>%
     mutate(
@@ -368,7 +382,7 @@ make_ames <- function() {
           "MnWw" = "Minimum_Wood_Wire",
           .missing = "No_Fence"
         )
-    )   %>%   
+    )   %>%
     # Convert everything else to factors
     dplyr::mutate(
       Alley = factor(Alley),
@@ -427,16 +441,12 @@ make_ames <- function() {
     dplyr::inner_join(AmesHousing::ames_geo, by = "PID") %>%
     # Garage_Yr_Blt is removed due to a fair amount of missing data
     dplyr::select(-Order,-PID, -Garage_Yr_Blt)
-  
-  hood_tab <- sort(table(out$Neighborhood))
-  hood_tab <- hood_tab[hood_tab > 0]
-  hood_levels <- rev(names(hood_tab))
-  
+
   out <- out %>%
     dplyr::mutate(
-      Neighborhood = factor(Neighborhood, levels = hood_levels)
+      Neighborhood = factor(Neighborhood, levels = AmesHousing::hood_levels)
     )
-  
+
   out
 }
 
@@ -465,7 +475,7 @@ five_point <- c(
 make_ordinal_ames <- function() {
   get_no <- function(x)
     grep("^No", levels(x), value = TRUE)
-  
+
   out <- make_ames()
   out$Lot_Shape <- ordered(
     as.character(out$Lot_Shape),
@@ -570,7 +580,7 @@ make_ordinal_ames <- function() {
   )
   out$Fence <- ordered(
     as.character(out$Fence),
-    levels = c("No_Fence", "Minimum_Wood_Wire", "Good_Wood", 
+    levels = c("No_Fence", "Minimum_Wood_Wire", "Good_Wood",
                "Minimum_Privacy", "Good_Privacy")
   )
   out

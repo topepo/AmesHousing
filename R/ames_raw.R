@@ -6,12 +6,12 @@
 #' @aliases ames_raw
 #' @docType data
 #' @return \item{ames_raw}{a tibble}
-#' @details 
-#' 
+#' @details
+#'
 #' From the data documentation reference, the columns include:
-#' 
+#'
 #' * `Order`: Observation number
-#' * `PID`: Parcel identification number  - can be used with city web site for parcel review. 
+#' * `PID`: Parcel identification number  - can be used with city web site for parcel review.
 #' * `MS SubClass`: Identifies the type of dwelling involved in the sale.
 #' * `MS Zoning`: Identifies the general zoning classification of the sale.
 #' * `Lot Frontage`: Linear feet of street connected to property
@@ -38,7 +38,7 @@
 #' * `Exterior 2`: Exterior covering on house (if more than one material)
 #' * `Mas Vnr Type`: Masonry veneer type
 #' * `Mas Vnr Area`: Masonry veneer area in square feet
-#' * `Exter Qual`: Evaluates the quality of the material on the exterior 
+#' * `Exter Qual`: Evaluates the quality of the material on the exterior
 #' * `Exter Cond`: Evaluates the present condition of the material on the exterior
 #' * `Foundation`: Type of foundation
 #' * `Bsmt Qual`: Evaluates the height of the basement
@@ -87,11 +87,11 @@
 #' * `Fence`: Fence quality
 #' * `Misc Feature`: Miscellaneous feature not covered in other categories
 #' * `Misc Val`: $Value of miscellaneous feature
-#' * `Mo Sold`: Month Sold 
-#' * `Yr Sold`: Year Sold 
+#' * `Mo Sold`: Month Sold
+#' * `Yr Sold`: Year Sold
 #' * `Sale Type`: Type of sale
 #' * `Sale Condition`: Condition of sale
-#' 
+#'
 #' @source De Cock, D. (2011). "Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project," \emph{Journal of Statistics Education},  Volume 19, Number 3.
 #'
 #' \url{https://ww2.amstat.org/publications/jse/v19n3/decock/DataDocumentation.txt}
@@ -107,6 +107,17 @@ NULL
 #' @aliases ames_geo
 NULL
 
+#' @rdname ames_raw
+#' @name ames_new
+#' @aliases ames_new
+NULL
+
+
+#' @rdname ames_raw
+#' @name hood_levels
+#' @aliases hood_levels
+NULL
+
 #' Ames Public Schools
 #'
 #' Locations of local schools
@@ -115,8 +126,8 @@ NULL
 #' @aliases ames_schools
 #' @docType data
 #' @return \item{ames_schools}{a tibble}
-#' @details 
-#' 
-#' The data set includes the school name and the geocodes. 
+#' @details
+#'
+#' The data set includes the school name and the geocodes.
 #' @keywords datasets
 NULL

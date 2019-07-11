@@ -2,6 +2,7 @@
 
 export("%>%")
 export(make_ames)
+export(make_ames_new)
 export(make_ordinal_ames)
 importFrom(dplyr,add_rownames)
 importFrom(dplyr,contains)

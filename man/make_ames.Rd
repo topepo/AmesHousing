@@ -2,10 +2,13 @@
 % Please edit documentation in R/make_ames.R
 \name{make_ames}
 \alias{make_ames}
+\alias{make_ames_new}
 \alias{make_ordinal_ames}
 \title{Create a Processed Version of the Ames Housing Data}
 \usage{
 make_ames()
+
+make_ames_new()
 
 make_ordinal_ames()
 }
@@ -48,6 +51,10 @@ The documentation for \code{\link[=ames_raw]{ames_raw()}} contains descriptions 
 the columns although, as noted above, the column names in
 \code{\link[=ames_raw]{ames_raw()}} are slightly different from the processed
 versions.
+
+\code{make_ames_new()} creates a data set of new properties. These were populated
+using less data sources than the original and lack a number of the condition
+and quality. Both properties were unsold at the time of this writing.
 }
 \examples{
 ames <- make_ames()
