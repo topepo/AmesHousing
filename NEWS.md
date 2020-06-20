@@ -1,3 +1,9 @@
+# AmesHousing 0.0.5
+
+ * `ames_schools` has been renamed to `ames_schools_geo` for consistency with other datasets carrying long-lat data. The school names are amended to indicate full name of the school.
+ * A new spatial dataset `ames_school_districts_sf` describes Elementary School District boundaries and includes district name (coinciding with the name of the school) and the polygon/multipolygon outline in `sf` format (using CRS 4326).
+ 
+
 # AmesHousing 0.0.4
 
  * `make_ames_new()` creates a data set of new properties. These were populated using less data sources than the original and lack a number of the condition and quality. Both properties were unsold at the time of this writing.
