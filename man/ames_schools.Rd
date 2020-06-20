@@ -3,12 +3,15 @@
 \docType{data}
 \name{ames_schools}
 \alias{ames_schools}
+\alias{ames_schools_geo}
+\alias{ames_school_districts_sf}
 \title{Ames Public Schools}
 \value{
-\item{ames_schools}{a tibble}
+\item{ames_schools_geo}{a tibble}
 }
 \description{
-Locations of local schools
+Locations of local schools and outline of elementary school districts.
+Elementary school district boundaries are returned as \code{sf} object in CRS 4326
 }
 \details{
 The data set includes the school name and the geocodes.

@@ -120,14 +120,22 @@ NULL
 
 #' Ames Public Schools
 #'
-#' Locations of local schools
+#' Locations of local schools and outline of elementary school districts.
+#' Elementary school district boundaries are returned as `sf` object in CRS 4326
 #'
 #' @name ames_schools
-#' @aliases ames_schools
+#' @aliases ames_schools_geo
 #' @docType data
-#' @return \item{ames_schools}{a tibble}
+#' @return \item{ames_schools_geo}{a tibble}
 #' @details
 #'
 #' The data set includes the school name and the geocodes.
 #' @keywords datasets
+NULL
+
+
+#' @rdname ames_schools
+#' @name ames_school_districts_sf
+#' @aliases ames_school_districts_sf
+
 NULL

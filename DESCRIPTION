@@ -1,11 +1,12 @@
 Package: AmesHousing
-Version: 0.0.4
+Version: 0.0.5
 Title: The Ames Iowa Housing Data
 URL: https://github.com/topepo/AmesHousing
 BugReports: https://github.com/topepo/AmesHousing/issues
 Description: Raw and processed versions of the data from De Cock (2011) <http://ww2.amstat.org/publications/jse> are included in the package. 
 Authors@R: c(
     person(given = "Max", family = "Kuhn", email = "max@rstudio.com", role = c("aut", "cre")),
+    person(given = "Dmytro", family = "Perepolkin", email = "dperepolkin@gmail.com", role = c ("ctb")),
     person("RStudio", role = "cph"))
 License: GPL-2
 Encoding: UTF-8
@@ -14,6 +15,8 @@ ByteCompile: true
 Depends: R (>= 2.10)
 Imports: 
     dplyr, magrittr
+Suggests:
+    sf
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0.9000
 Suggests: 
