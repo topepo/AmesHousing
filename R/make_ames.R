@@ -76,22 +76,26 @@ process_ames <- function(dat) {
       Second_Flr_SF = `2nd_Flr_SF`,
       Year_Sold = Yr_Sold
     ) %>%
+    # Remove leading zeros
+    dplyr::mutate(
+      MS_SubClass = as.character(as.integer(MS_SubClass))
+    ) %>%
     # Make more meaningful factor levels for some variables
     dplyr::mutate(
       MS_SubClass =
         dplyr::recode_factor(
           factor(MS_SubClass),
-          '020' = 'One_Story_1946_and_Newer_All_Styles',
-          '030' = 'One_Story_1945_and_Older',
-          '040' = 'One_Story_with_Finished_Attic_All_Ages',
-          '045' = 'One_and_Half_Story_Unfinished_All_Ages',
-          '050' = 'One_and_Half_Story_Finished_All_Ages',
-          '060' = 'Two_Story_1946_and_Newer',
-          '070' = 'Two_Story_1945_and_Older',
-          '075' = 'Two_and_Half_Story_All_Ages',
-          '080' = 'Split_or_Multilevel',
-          '085' = 'Split_Foyer',
-          '090' = 'Duplex_All_Styles_and_Ages',
+          '20' = 'One_Story_1946_and_Newer_All_Styles',
+          '30' = 'One_Story_1945_and_Older',
+          '40' = 'One_Story_with_Finished_Attic_All_Ages',
+          '45' = 'One_and_Half_Story_Unfinished_All_Ages',
+          '50' = 'One_and_Half_Story_Finished_All_Ages',
+          '60' = 'Two_Story_1946_and_Newer',
+          '70' = 'Two_Story_1945_and_Older',
+          '75' = 'Two_and_Half_Story_All_Ages',
+          '80' = 'Split_or_Multilevel',
+          '85' = 'Split_Foyer',
+          '90' = 'Duplex_All_Styles_and_Ages',
           '120' = 'One_Story_PUD_1946_and_Newer',
           '150' = 'One_and_Half_Story_PUD_All_Ages',
           '160' = 'Two_Story_PUD_1946_and_Newer',
