@@ -1,9 +1,11 @@
 # AmesHousing
 
-
+[![R build status](https://github.com/topepo/AmesHousing/workflows/R-CMD-check/badge.svg)](https://github.com/topepo/AmesHousing/actions)
+[![Codecov test coverage](https://codecov.io/gh/topepo/AmesHousing/branch/master/graph/badge.svg)](https://codecov.io/gh/topepo/AmesHousing?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/AmesHousing)](http://CRAN.R-project.org/package=AmesHousing)
 [![Downloads](http://cranlogs.r-pkg.org/badges/AmesHousing)](https://CRAN.R-project.org/package=AmesHousing)
 ![](https://img.shields.io/badge/lifecycle-maturing-blue.svg)
+
 
 This package contains the data described by [De Cock (2011)](http://ww2.amstat.org/publications/jse/v19n3/decock.pdf) where 82 fields were recored for 2,930 properties in Ames IA. Different versions of the data are available using the package. 
 
