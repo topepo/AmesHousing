@@ -64,9 +64,9 @@ process_ames <- function(dat) {
   out <- dat %>%
     # Rename variables with spaces or begin with numbers.
     # SalePrice would be inconsistently named so change that too.
-    dplyr::rename_at(
-      dplyr::vars(dplyr::contains(' ')),
-      dplyr::funs(gsub(' ', '_', .))
+    dplyr::rename_with(
+      ~ gsub(' ', '_', .),
+      dplyr::contains(' '),
     ) %>%
     dplyr::rename(
       Sale_Price = SalePrice,
