@@ -18,4 +18,4 @@ Imports:
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0.9000
 Suggests: 
-    covr, sf
+    covr
