@@ -1,4 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 README.*
+^codecov\.yml$
 ^data-raw$
+
+^\.github$

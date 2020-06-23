@@ -1,5 +1,5 @@
 Package: AmesHousing
-Version: 0.0.5
+Version: 0.0.4.9000
 Title: The Ames Iowa Housing Data
 URL: https://github.com/topepo/AmesHousing
 BugReports: https://github.com/topepo/AmesHousing/issues
@@ -15,7 +15,7 @@ ByteCompile: true
 Depends: R (>= 2.10)
 Imports: 
     dplyr, magrittr
-Suggests:
-    sf
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.0.9000
+Suggests: 
+    covr
