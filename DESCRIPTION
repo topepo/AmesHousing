@@ -1,5 +1,5 @@
 Package: AmesHousing
-Version: 0.0.4
+Version: 0.0.4.9000
 Title: The Ames Iowa Housing Data
 URL: https://github.com/topepo/AmesHousing
 BugReports: https://github.com/topepo/AmesHousing/issues
