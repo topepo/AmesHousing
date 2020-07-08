@@ -25,56 +25,56 @@ From the data documentation reference, the columns include:
 \itemize{
 \item \code{Order}: Observation number
 \item \code{PID}: Parcel identification number  - can be used with city web site for parcel review.
-\item \code{MS SubClass}: Identifies the type of dwelling involved in the sale.
-\item \code{MS Zoning}: Identifies the general zoning classification of the sale.
-\item \code{Lot Frontage}: Linear feet of street connected to property
-\item \code{Lot Area}: Lot size in square feet
+\item \verb{MS SubClass}: Identifies the type of dwelling involved in the sale.
+\item \verb{MS Zoning}: Identifies the general zoning classification of the sale.
+\item \verb{Lot Frontage}: Linear feet of street connected to property
+\item \verb{Lot Area}: Lot size in square feet
 \item \code{Street}: Type of road access to property
 \item \code{Alley}: Type of alley access to property
-\item \code{Lot Shape}: General shape of property
-\item \code{Land Contour}: Flatness of the property
+\item \verb{Lot Shape}: General shape of property
+\item \verb{Land Contour}: Flatness of the property
 \item \code{Utilities}: Type of utilities available
-\item \code{Lot Config}: Lot configuration
-\item \code{Land Slope}: Slope of property
+\item \verb{Lot Config}: Lot configuration
+\item \verb{Land Slope}: Slope of property
 \item \code{Neighborhood}: Physical locations within Ames city limits (map available)
-\item \code{Condition 1}: Proximity to various conditions
-\item \code{Condition 2}: Proximity to various conditions (if more than one is present)
-\item \code{Bldg Type}: Type of dwelling
-\item \code{House Style}: Style of dwelling
-\item \code{Overall Qual}: Rates the overall material and finish of the house
-\item \code{Overall Cond}: Rates the overall condition of the house
-\item \code{Year Built}: Original construction date
-\item \code{Year Remod/Add}: Remodel date (same as construction date if no remodeling or additions)
-\item \code{Roof Style}: Type of roof
-\item \code{Roof Matl}: Roof material
-\item \code{Exterior 1}: Exterior covering on house
-\item \code{Exterior 2}: Exterior covering on house (if more than one material)
-\item \code{Mas Vnr Type}: Masonry veneer type
-\item \code{Mas Vnr Area}: Masonry veneer area in square feet
-\item \code{Exter Qual}: Evaluates the quality of the material on the exterior
-\item \code{Exter Cond}: Evaluates the present condition of the material on the exterior
+\item \verb{Condition 1}: Proximity to various conditions
+\item \verb{Condition 2}: Proximity to various conditions (if more than one is present)
+\item \verb{Bldg Type}: Type of dwelling
+\item \verb{House Style}: Style of dwelling
+\item \verb{Overall Qual}: Rates the overall material and finish of the house
+\item \verb{Overall Cond}: Rates the overall condition of the house
+\item \verb{Year Built}: Original construction date
+\item \verb{Year Remod/Add}: Remodel date (same as construction date if no remodeling or additions)
+\item \verb{Roof Style}: Type of roof
+\item \verb{Roof Matl}: Roof material
+\item \verb{Exterior 1}: Exterior covering on house
+\item \verb{Exterior 2}: Exterior covering on house (if more than one material)
+\item \verb{Mas Vnr Type}: Masonry veneer type
+\item \verb{Mas Vnr Area}: Masonry veneer area in square feet
+\item \verb{Exter Qual}: Evaluates the quality of the material on the exterior
+\item \verb{Exter Cond}: Evaluates the present condition of the material on the exterior
 \item \code{Foundation}: Type of foundation
-\item \code{Bsmt Qual}: Evaluates the height of the basement
-\item \code{Bsmt Cond}: Evaluates the general condition of the basement
-\item \code{Bsmt Exposure}: Refers to walkout or garden level walls
-\item \code{BsmtFin Type 1}: Rating of basement finished area
-\item \code{BsmtFin SF 1}: Type 1 finished square feet
-\item \code{BsmtFinType 2}: Rating of basement finished area (if multiple types)
-\item \code{BsmtFin SF 2}: Type 2 finished square feet
-\item \code{Bsmt Unf SF}: Unfinished square feet of basement area
-\item \code{Total Bsmt SF}: Total square feet of basement area
+\item \verb{Bsmt Qual}: Evaluates the height of the basement
+\item \verb{Bsmt Cond}: Evaluates the general condition of the basement
+\item \verb{Bsmt Exposure}: Refers to walkout or garden level walls
+\item \verb{BsmtFin Type 1}: Rating of basement finished area
+\item \verb{BsmtFin SF 1}: Type 1 finished square feet
+\item \verb{BsmtFinType 2}: Rating of basement finished area (if multiple types)
+\item \verb{BsmtFin SF 2}: Type 2 finished square feet
+\item \verb{Bsmt Unf SF}: Unfinished square feet of basement area
+\item \verb{Total Bsmt SF}: Total square feet of basement area
 \item \code{Heating}: Type of heating
 \item \code{HeatingQC}: Heating quality and condition
-\item \code{Central Air}: Central air conditioning
+\item \verb{Central Air}: Central air conditioning
 \item \code{Electrical}: Electrical system
-\item \code{1st Flr SF}: First Floor square feet
-\item \code{2nd Flr SF}: Second floor square feet
-\item \code{Low Qual Fin SF}: Low quality finished square feet (all floors)
-\item \code{Gr Liv Area}: Above grade (ground) living area square feet
-\item \code{Bsmt Full Bath}: Basement full bathrooms
-\item \code{Bsmt Half Bath}: Basement half bathrooms
-\item \code{Full Bath}: Full bathrooms above grade
-\item \code{Half Bath}: Half baths above grade
+\item \verb{1st Flr SF}: First Floor square feet
+\item \verb{2nd Flr SF}: Second floor square feet
+\item \verb{Low Qual Fin SF}: Low quality finished square feet (all floors)
+\item \verb{Gr Liv Area}: Above grade (ground) living area square feet
+\item \verb{Bsmt Full Bath}: Basement full bathrooms
+\item \verb{Bsmt Half Bath}: Basement half bathrooms
+\item \verb{Full Bath}: Full bathrooms above grade
+\item \verb{Half Bath}: Half baths above grade
 \item \code{Bedroom}: Bedrooms above grade (does NOT include basement bedrooms)
 \item \code{Kitchen}: Kitchens above grade
 \item \code{KitchenQual}: Kitchen quality
@@ -82,28 +82,28 @@ From the data documentation reference, the columns include:
 \item \code{Functional}: Home functionality (Assume typical unless deductions are warranted)
 \item \code{Fireplaces}: Number of fireplaces
 \item \code{FireplaceQu}: Fireplace quality
-\item \code{Garage Type}: Garage location
-\item \code{Garage Yr Blt}: Year garage was built
-\item \code{Garage Finish}: Interior finish of the garage
-\item \code{Garage Cars}: Size of garage in car capacity
-\item \code{Garage Area}: Size of garage in square feet
-\item \code{Garage Qual}: Garage quality
-\item \code{Garage Cond}: Garage condition
-\item \code{Paved Drive}: Paved driveway
-\item \code{Wood Deck SF}: Wood deck area in square feet
-\item \code{Open Porch SF}: Open porch area in square feet
-\item \code{Enclosed Porch}: Enclosed porch area in square feet
-\item \code{3-Ssn Porch}: Three season porch area in square feet
-\item \code{Screen Porch}: Screen porch area in square feet
-\item \code{Pool Area}: Pool area in square feet
-\item \code{Pool QC}: Pool quality
+\item \verb{Garage Type}: Garage location
+\item \verb{Garage Yr Blt}: Year garage was built
+\item \verb{Garage Finish}: Interior finish of the garage
+\item \verb{Garage Cars}: Size of garage in car capacity
+\item \verb{Garage Area}: Size of garage in square feet
+\item \verb{Garage Qual}: Garage quality
+\item \verb{Garage Cond}: Garage condition
+\item \verb{Paved Drive}: Paved driveway
+\item \verb{Wood Deck SF}: Wood deck area in square feet
+\item \verb{Open Porch SF}: Open porch area in square feet
+\item \verb{Enclosed Porch}: Enclosed porch area in square feet
+\item \verb{3-Ssn Porch}: Three season porch area in square feet
+\item \verb{Screen Porch}: Screen porch area in square feet
+\item \verb{Pool Area}: Pool area in square feet
+\item \verb{Pool QC}: Pool quality
 \item \code{Fence}: Fence quality
-\item \code{Misc Feature}: Miscellaneous feature not covered in other categories
-\item \code{Misc Val}: $Value of miscellaneous feature
-\item \code{Mo Sold}: Month Sold
-\item \code{Yr Sold}: Year Sold
-\item \code{Sale Type}: Type of sale
-\item \code{Sale Condition}: Condition of sale
+\item \verb{Misc Feature}: Miscellaneous feature not covered in other categories
+\item \verb{Misc Val}: $Value of miscellaneous feature
+\item \verb{Mo Sold}: Month Sold
+\item \verb{Yr Sold}: Year Sold
+\item \verb{Sale Type}: Type of sale
+\item \verb{Sale Condition}: Condition of sale
 }
 }
 \keyword{datasets}
