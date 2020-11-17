@@ -150,7 +150,7 @@ process_ames <- function(dat) {
       Bsmt_Exposure = factor(Bsmt_Exposure),
       BsmtFin_Type_1 = ifelse(is.na(BsmtFin_Type_1), "No_Basement", BsmtFin_Type_1),
       BsmtFin_Type_1 = factor(BsmtFin_Type_1),
-      BsmtFin_SF_1 = ifelse(is.na(BsmtFin_SF_1), 0, BsmtFin_Type_1),
+      BsmtFin_SF_1 = ifelse(is.na(BsmtFin_SF_1), 0, BsmtFin_SF_1),
       BsmtFin_Type_2 = ifelse(is.na(BsmtFin_Type_2), "No_Basement", BsmtFin_Type_2),
       BsmtFin_Type_2 = factor(BsmtFin_Type_2),
       BsmtFin_SF_2 = ifelse(is.na(BsmtFin_SF_2), 0, BsmtFin_SF_2),
